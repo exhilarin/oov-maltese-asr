@@ -1,0 +1,4 @@
+results/preds/*.wav
+*-ckpt/
+whisper-small-mt/
+__pycache__/
