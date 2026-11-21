@@ -26,7 +26,10 @@ def prep(x):
             "labels": proc.tokenizer(x["raw_transcription"]).input_ids}  # train on cased+punctuated text, score normalized
 
 
-train, dev = (d.map(prep, remove_columns=d.column_names) for d in (load_split("train"), load_split("dev")))
+# Whisper only sees 30 s; drop longer training clips so labels never describe cut-off audio
+fits = lambda x: x["num_samples"] <= 30 * 16000
+train, dev = (d.filter(fits).map(prep, remove_columns=d.column_names) for d in (load_split("train"), load_split("dev")))
+print("train/dev utts after 30 s filter:", len(train), len(dev))
 
 
 def collate(b):

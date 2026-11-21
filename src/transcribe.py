@@ -40,7 +40,9 @@ else:
     from transformers import pipeline
     pipe = pipeline("automatic-speech-recognition", model=a.model, device=0 if torch.cuda.is_available() else -1,
                     torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32)
-    kw = {"generate_kwargs": {"language": "maltese", "task": "transcribe"}} if "whisper" in pipe.model.config.model_type else {}
+    # FLEURS has clips > 30 s; Whisper sees 30 s windows, so long clips are chunked
+    kw = {"generate_kwargs": {"language": "maltese", "task": "transcribe"}, "chunk_length_s": 30} \
+        if "whisper" in pipe.model.config.model_type else {}
     t0 = time.time()
     hyps = [o["text"] for o in pipe([{"raw": x, "sampling_rate": 16000} for x in audios], batch_size=a.batch, **kw)]
 elapsed = time.time() - t0
