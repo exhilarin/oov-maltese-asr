@@ -11,7 +11,7 @@ from transformers import (Seq2SeqTrainer, Seq2SeqTrainingArguments, WhisperForCo
 ap = argparse.ArgumentParser()
 ap.add_argument("--base", default="openai/whisper-small")
 ap.add_argument("--steps", type=int, default=1000)  # ~5.5 epochs of FLEURS mt train at batch 16
-ap.add_argument("--ckpt", action="store_true", help="gradient checkpointing (slower, less memory)")
+ap.add_argument("--no-ckpt", action="store_true", help="disable gradient checkpointing (OOMs on a 16 GB T4 at batch 16)")
 ap.add_argument("--out", default="whisper-small-mt")
 a = ap.parse_args()
 set_seed(42)
@@ -53,7 +53,7 @@ def metrics(p):
 args = Seq2SeqTrainingArguments(
     output_dir=a.out + "-ckpt", per_device_train_batch_size=16, per_device_eval_batch_size=16,
     learning_rate=1e-5, warmup_steps=200, max_steps=a.steps, fp16=torch.cuda.is_available(),
-    gradient_checkpointing=a.ckpt, eval_strategy="steps", eval_steps=max(a.steps // 4, 50), save_steps=max(a.steps // 4, 50), save_total_limit=2,
+    gradient_checkpointing=not a.no_ckpt, eval_strategy="steps", eval_steps=max(a.steps // 4, 50), save_steps=max(a.steps // 4, 50), save_total_limit=2,
     predict_with_generate=True, generation_max_length=225, logging_steps=50, report_to="none",
     load_best_model_at_end=True, metric_for_best_model="wer", greater_is_better=False, seed=42)
 tr = Seq2SeqTrainer(model=model, args=args, train_dataset=train, eval_dataset=dev, data_collator=collate,
