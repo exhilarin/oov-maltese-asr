@@ -3,7 +3,7 @@ Kaggle T4 16 GB, fp16. usage: python src/finetune_whisper.py [--steps 2000] [--o
 import argparse, os, sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-from common import load_split, normalize
+from common import load_split, normalize, wav
 import jiwer, torch
 from transformers import (Seq2SeqTrainer, Seq2SeqTrainingArguments, WhisperForConditionalGeneration,
                           WhisperProcessor, set_seed)
@@ -22,7 +22,7 @@ model.generation_config.forced_decoder_ids = None
 
 
 def prep(x):
-    return {"input_features": proc.feature_extractor(x["audio"]["array"], sampling_rate=16000).input_features[0],
+    return {"input_features": proc.feature_extractor(wav(x), sampling_rate=16000).input_features[0],
             "labels": proc.tokenizer(x["raw_transcription"]).input_ids}  # train on cased+punctuated text, score normalized
 
 

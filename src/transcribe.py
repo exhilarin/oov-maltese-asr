@@ -4,7 +4,7 @@ MODEL: HF id (wav2vec2 / whisper), a local fine-tuned checkpoint dir, or nvidia/
 import argparse, csv, json, os, sys, tempfile, time
 
 sys.path.insert(0, os.path.dirname(__file__))
-from common import load_split
+from common import load_split, wav
 
 ap = argparse.ArgumentParser()
 ap.add_argument("model")
@@ -15,7 +15,7 @@ a = ap.parse_args()
 
 import torch
 ds = load_split(a.split, a.limit)
-audios = [x["audio"]["array"] for x in ds]
+audios = [wav(x) for x in ds]
 audio_sec = sum(len(x) for x in audios) / 16000
 
 revision = "local"
