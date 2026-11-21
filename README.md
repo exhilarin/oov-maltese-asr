@@ -5,6 +5,8 @@ Automatic speech recognition for **Maltese (mt)**, a low-resource Semitic langua
 
 Group **Out of Vocabulary**: İlyas Güney, Eren Taşkın, Nuri Tayfun Akbeniz.
 
+Docs: [research notes](docs/research.md) · [results and error analysis](docs/results.md) · [contributions](contributions/)
+
 ## Data
 
 FLEURS `mt_mt` (google/fleurs, CC-BY-4.0), official splits. Stats from `python src/split_stats.py`:
