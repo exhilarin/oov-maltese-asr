@@ -34,7 +34,7 @@ disjointness cannot be checked; this is a stated limitation. Dev is used for che
 Qwen3-ASR was considered but does not list Maltese among its supported languages
 ([model card](https://huggingface.co/Qwen/Qwen3-ASR-1.7B)), so it is not evaluated.
 
-**Our contribution:** fine-tune whisper-small on FLEURS mt train (`src/finetune_whisper.py`, seed 42, 2000 steps,
+**Our contribution:** fine-tune whisper-small on FLEURS mt train (`src/finetune_whisper.py`, seed 42, 1000 steps,
 best checkpoint by dev WER) and compare against the zero-shot model and the baselines.
 
 ## Run
