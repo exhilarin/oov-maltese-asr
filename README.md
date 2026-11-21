@@ -39,7 +39,7 @@ best checkpoint by dev WER) and compare against the zero-shot model and the base
 
 ## Run
 
-Everything runs on a Kaggle T4: open `notebooks/kaggle_run.ipynb` and run all cells. Locally:
+Everything runs on a free Colab (or Kaggle) T4: open `notebooks/run_all.ipynb` and run all cells. Locally:
 
 ```
 pip install -r requirements.txt
