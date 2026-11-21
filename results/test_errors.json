@@ -1,0 +1,242 @@
+{
+ "canary-1b-v2": {
+  "word_error_special": 23.04,
+  "word_error_plain": 18.19,
+  "n_special": 8035,
+  "n_plain": 9885,
+  "top_subs": [
+   [
+    "qawwija",
+    "għawija",
+    12
+   ],
+   [
+    "ħong",
+    "hong",
+    12
+   ],
+   [
+    "ukoll",
+    "wkoll",
+    10
+   ],
+   [
+    "jistgħu",
+    "jistaw",
+    10
+   ],
+   [
+    "tagħhom",
+    "taħħom",
+    10
+   ],
+   [
+    "l-ebda",
+    "lebda",
+    8
+   ],
+   [
+    "huwa",
+    "hija",
+    7
+   ],
+   [
+    "ħlief",
+    "li",
+    7
+   ]
+  ]
+ },
+ "parakeet-tdt-0.6b-v3": {
+  "word_error_special": 24.93,
+  "word_error_plain": 22.02,
+  "n_special": 8035,
+  "n_plain": 9885,
+  "top_subs": [
+   [
+    "t'isfel",
+    "tisfel",
+    16
+   ],
+   [
+    "ħong",
+    "hong",
+    11
+   ],
+   [
+    "l-kbira",
+    "kbira",
+    9
+   ],
+   [
+    "giza",
+    "gisa",
+    9
+   ],
+   [
+    "madankollu",
+    "kollu",
+    8
+   ],
+   [
+    "sikur",
+    "sigur",
+    6
+   ],
+   [
+    "wiesgħa",
+    "wiesa",
+    6
+   ],
+   [
+    "li",
+    "lill-bnedmin",
+    6
+   ]
+  ]
+ },
+ "wav2vec2-large-xlsr-53-maltese-64h": {
+  "word_error_special": 19.56,
+  "word_error_plain": 20.3,
+  "n_special": 8035,
+  "n_plain": 9885,
+  "top_subs": [
+   [
+    "b'mod",
+    "mod",
+    19
+   ],
+   [
+    "kong",
+    "cong",
+    11
+   ],
+   [
+    "km",
+    "kilometru",
+    11
+   ],
+   [
+    "000",
+    "elf",
+    9
+   ],
+   [
+    "20",
+    "għoxrin",
+    7
+   ],
+   [
+    "l-imġiba",
+    "l-imġieba",
+    7
+   ],
+   [
+    "t'isfel",
+    "isfel",
+    7
+   ],
+   [
+    "anke",
+    "anki",
+    6
+   ]
+  ]
+ },
+ "whisper-small-mt": {
+  "word_error_special": 33.84,
+  "word_error_plain": 28.55,
+  "n_special": 8035,
+  "n_plain": 9885,
+  "top_subs": [
+   [
+    "ħong",
+    "hong",
+    12
+   ],
+   [
+    "ma'",
+    "ma",
+    9
+   ],
+   [
+    "lil",
+    "li",
+    7
+   ],
+   [
+    "hu",
+    "u",
+    7
+   ],
+   [
+    "tagħlim",
+    "talim",
+    6
+   ],
+   [
+    "man-nifs",
+    "nifs",
+    6
+   ],
+   [
+    "disinn",
+    "disint",
+    6
+   ],
+   [
+    "davey",
+    "david",
+    6
+   ]
+  ]
+ },
+ "whisper-small": {
+  "word_error_special": 99.85,
+  "word_error_plain": 85.33,
+  "n_special": 8035,
+  "n_plain": 9885,
+  "top_subs": [
+   [
+    "u",
+    "o",
+    65
+   ],
+   [
+    "ta'",
+    "ta",
+    61
+   ],
+   [
+    "u",
+    "ul",
+    31
+   ],
+   [
+    "għal",
+    "al",
+    28
+   ],
+   [
+    "li",
+    "le",
+    19
+   ],
+   [
+    "huwa",
+    "u",
+    18
+   ],
+   [
+    "bħala",
+    "pala",
+    15
+   ],
+   [
+    "kull",
+    "kul",
+    13
+   ]
+  ]
+ }
+}

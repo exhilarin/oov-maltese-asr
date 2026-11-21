@@ -47,6 +47,17 @@ python src/transcribe.py openai/whisper-small --split test
 python src/score.py --split test
 ```
 
-## Results
+## Results (FLEURS mt_mt test, 926 utterances, Tesla T4)
 
-See `results/test_scores.md` (baselines and our models in separate tables).
+| system | WER % | CER % | RTF |
+|---|---|---|---|
+| nvidia/canary-1b-v2 | **22.15** | 7.10 | 0.041 |
+| nvidia/parakeet-tdt-0.6b-v3 | 24.77 | **6.45** | 0.010 |
+| wav2vec2-large-xlsr-53-maltese-64h | 25.41 | 7.38 | 0.007 |
+| openai/whisper-small (zero-shot) | 111.93 | 54.01 | 0.193 |
+| **ours: whisper-small fine-tuned on FLEURS mt train** | 34.24 | 9.35 | 0.012 |
+
+Fine-tuning (1000 steps, best checkpoint = step 750 by dev WER 34.60; dev WER at steps 250/500/750/1000:
+44.6 / 36.1 / 34.6 / 34.7) cuts Whisper-small's WER by 78 points, but the three models that saw far more Maltese
+or EU speech stay ahead. Full tables: `results/test_scores.md`, error analysis: `results/test_errors.md`,
+training log: `results/finetune_trainer_state.json`.

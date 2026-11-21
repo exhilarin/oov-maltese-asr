@@ -1,0 +1,10 @@
+{
+ "model": "nvidia/canary-1b-v2",
+ "revision": "d455706339a6b32e1aa40f82c713a482a0c938e2",
+ "split": "test",
+ "utts": 926,
+ "audio_sec": 12770.6,
+ "decode_sec": 524.0,
+ "rtf": 0.041,
+ "hardware": "Tesla T4"
+}

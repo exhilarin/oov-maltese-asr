@@ -1,0 +1,10 @@
+{
+ "model": "whisper-small-mt",
+ "revision": "local",
+ "split": "test",
+ "utts": 926,
+ "audio_sec": 12770.6,
+ "decode_sec": 155.6,
+ "rtf": 0.0122,
+ "hardware": "Tesla T4"
+}

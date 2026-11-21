@@ -1,0 +1,10 @@
+{
+ "model": "nvidia/parakeet-tdt-0.6b-v3",
+ "revision": "541d1f99c6b0c3cd0b11a95167540bb8edefd82b",
+ "split": "test",
+ "utts": 926,
+ "audio_sec": 12770.6,
+ "decode_sec": 128.8,
+ "rtf": 0.0101,
+ "hardware": "Tesla T4"
+}

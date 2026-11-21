@@ -1,0 +1,10 @@
+{
+ "model": "carlosdanielhernandezmena/wav2vec2-large-xlsr-53-maltese-64h",
+ "revision": "0468585cd5ee70a4c00bee54c36f0bc933136a06",
+ "split": "test",
+ "utts": 926,
+ "audio_sec": 12770.6,
+ "decode_sec": 92.5,
+ "rtf": 0.0072,
+ "hardware": "Tesla T4"
+}
